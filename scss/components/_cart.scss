@@ -1,0 +1,74 @@
+.cartContainer {
+    flex-direction: column;
+    margin: 40px auto;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.cartCard {
+    border-bottom: 1px solid $primary;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    .cartImg {
+        width: 150px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .cartProductName {
+        width: 240px;
+        margin-left: 30px;
+        margin-bottom: 0;
+    }
+    .input-group {
+        margin-bottom: 0;
+        width: 160px;
+        justify-content: flex-end;
+        .qtyUpdate {
+            width: 50px;
+            border: 1px solid $primary;
+            border-radius: 0 0.25rem 0.25rem 0;
+            &:focus-visible {
+                outline: none;
+                box-shadow: 0 0 10px 0.5px $primary;
+                
+            }
+        }
+        .stockLabel {
+            position: absolute;
+            bottom: -22px;
+            right: 0;
+            font-size: 14px;
+            color: #666;
+        }
+    }
+    .cartProductPrice {
+        margin: 0px 15px;
+        width: 100px;
+        text-align: end;
+    }
+    .btn-close{
+        &:focus {
+            border-color: $primary-dark;
+            box-shadow: 0 0 10px 0.5px $primary;
+        }
+    }
+}
+
+.discountCodeInput {
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    .btn {
+        width: unset;
+    }
+    input {
+        height: 42px;
+    }
+}

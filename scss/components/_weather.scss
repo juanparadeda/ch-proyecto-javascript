@@ -1,0 +1,49 @@
+.weatherCardsContainer {
+    display: flex;
+    margin: 0 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .weatherCard {
+        background-color: $secondary-light;
+    width: 170px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 10px;
+        h5 {
+            color: $secondary-dark;
+            text-align: center;
+        }
+        h6 {
+            color: $primary-dark;
+            margin: 10px 10px;
+        }
+        img {
+            width: 50px;
+            height: auto;
+            align-self: center;
+        }
+    }
+}
+
+.spinner-border {
+    margin-top: 50px;
+    justify-self: center;
+}
+
+.weatherIntroText {
+    width: 80%;
+    color: $primary-dark;
+    border-bottom: 1px solid $secondary-dark;
+    margin: 0px auto;
+    padding: 40px 0;
+}
+
+.yourLocation{
+    h4, h5 {
+        color: $primary-dark;
+        text-align: center;
+        margin: 20px;
+    }
+}

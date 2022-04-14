@@ -1,0 +1,92 @@
+/* Estilos Generales del site */
+@import 'base/variables';
+@import 'components/cards';
+@import 'components/header';
+@import 'components/cart';
+@import 'components/productPage';
+@import 'components/weather';
+* { 
+    transition: all 0.5s;
+}
+
+
+h1 {
+    margin-top: 90px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: $secondary-dark;
+}
+
+.filterContainer {
+    display: inline-block;
+    position: fixed;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid $primary-light;
+    border-radius: 10px;
+    padding: 10px;
+    div{
+        margin: 15px 10px;
+        div {
+            margin: 5px 0;
+            text-align: left;
+            display: block;
+        }
+        h4 {
+            text-align: left;
+        }
+    }
+}
+
+.btn {
+    width: 200px;
+    height: 42px;
+    margin: 3px 0;
+    text-align: left;
+}
+
+.productsContainer {
+    margin: 50px auto 50px 170px;
+    justify-content: center;
+    flex-wrap: wrap;
+    .card {
+        margin: 20px;
+    }
+}
+.btn-primary {
+    background-color: $primary-dark;
+    color: white;
+    border: none;
+    &:hover {
+        background-color: $primary;
+        border: none;
+    }
+    &:focus, &:active, &:active:focus {
+        background-color: $primary-dark;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.toast-header {
+    background-color: $primary-light;
+    .me-auto{
+        color: black;
+    }
+    small {
+        color: black;
+    }
+}
+
+.noStock {
+    background-color: #eaf075;
+    .me-auto {
+        color: black;
+    }
+}
+
+.checkbox{
+    &:checked{
+        background-color: $primary-dark;
+    }
+}

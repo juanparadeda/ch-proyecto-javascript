@@ -1,0 +1,37 @@
+.productPageContainer{
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .productPageImage {
+        margin: -10px 0;
+        width: 500px;
+        height: auto;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .nextToProductImage{
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        .productPrice{
+            margin: 0;
+        }
+        .btn-primary{
+            &:focus, &:active {
+                background-color: $primary-dark;
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .productDescription {
+        font-size: 16px;
+        border-top: 1px solid $primary-dark;
+        padding-top: 50px;
+    }
+}

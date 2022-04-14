@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Fin CSS de Bootstrap -->
+    <!-- CSS Propio -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sheipeg | Prepará tu sesión</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg">
+            <div class="container-fluid d-flex">
+                <a class="navbar-brand p-2" href="index.html"><img src="images/photologo.png" alt="Site Logo">
+                </a>
+
+                <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="images/menu_black_24dp.svg" class="navbar-toggler-icon">
+                </button>
+                <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="productos/camaras.html">Cámaras</a></li>
+                                <li><a class="dropdown-item" href="productos/lentes.html">Lentes</a></li>
+                                <li><a class="dropdown-item" href="productos/accesorios.html">Accesorios</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="productos/usados.html">Usados</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="weather.html">El clima</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <a href="cart.html" class="fixedCart d-flex flex-row p-2" href="#">
+                    <div class="cartIcon">
+                        <img src="images/shoppingCart.png" alt="shopping cart icon">
+                        <div><strong id="amountOfProducts"></strong></div>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <h1 id="mainTitle">Prepará tu sesión</h1>
+    <p class="weatherIntroText">Autorizanos a recibir tu ubicación, para darte el pronóstico del clima. Prepará bien tu
+        sesión fotográfica, según si hay sol, está nublado, o llueve. Aprovechá la <strong>mejor luz para tus
+            fotografías</strong>, aprovechande el <strong>amanecer</strong> y el <strong>atardecer</strong>. En nuestra
+        tienda vas a encontrar los mejores accesorios para tu necesidad</p>
+    <div class="yourLocation" id="yourLocation">
+        <!--Acá va la información de geolocalización-->
+    </div>
+    <container id="weatherCardsContainer" class="weatherCardsContainer">
+        <!--Acá van las cards que se generan en weather.js -->
+        <!--Esto es un spinner de Bootstrap. Se muestra mientras la API trae la información del clima -->
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only"></span>
+        </div>
+        <!--Fin spinner de Bootstrap-->
+        <!--Fin cards del clima-->
+    </container>
+    <!-- JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- Fin JS de Bootstrap -->
+    <!-- JS Custom -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
+    <script src="js/getCart.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+
+</html>

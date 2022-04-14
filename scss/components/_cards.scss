@@ -1,0 +1,17 @@
+.image-container {
+    height: 100px;
+    width: auto;
+}
+
+.cardTitleStyle {
+    cursor: pointer;
+    &:hover {
+        color: $primary-light;
+    }
+}
+
+.card-img-top {
+    &:hover {
+        filter: contrast(140%);
+    }
+}
