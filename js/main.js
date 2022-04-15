@@ -1,42 +1,5 @@
 cardHTMLGenerator(catalog); // Publico las cards de todo el catálogo
-
-function cardHTMLGenerator(products) {
-    let cardsHTML = "";
-    for (let i = 0; i < products.length; i++) {
-        cardsHTML += `<div data-productid="${products[i].id}" class="card" style="width: 18rem;">
-        <a href="#" class="productLink">
-        <img src="${products[i].image}" class="card-img-top" alt="${products[i].name}">
-        </a>
-        <div class="card-body">
-        <h5 class="productLink cardTitleStyle card-title">${products[i].name}</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Precio $ ${products[i].price}</li>
-            <li class="list-group-item">Envío a zona AMBA $ 1500</li>
-            <li class="list-group-item">Envío al interior $ 5000</li>   
-        </ul>
-        <div class="card-body">
-            <button onclick="addToCart('${products[i].id}')" href="#" class="btn btn-primary">Agregar al Carrito</button>
-        </div>
-    </div>    `
-    }
-    document.getElementById("cardContainer").innerHTML = cardsHTML;
-}
-
-// Fin publicación de catálogo
-
-// Lógica para ir a páginas de detalle de cada producto
-const goToProductPage = (e) => {
-    e.preventDefault();
-    const product = catalog.find(productInCatalog => productInCatalog.id == e.target.parentNode.parentNode.dataset.productid.toString());
-    localStorage.setItem('product', JSON.stringify(product));
-    window.location.href = 'product.html'
-}
-const links = document.getElementsByClassName('productLink');
-for (let i = 0; i < links.length; i++) {
-    links[i].onclick = goToProductPage;
-}
-// Fin de lógica para ir a páginas de detalle de cada producto
+addProductPagesLinks();
 
 // Búsqueda
 let triggerSearch = document.getElementById('searchString');
@@ -52,6 +15,7 @@ function searchProducts() {
         }
     }
     cardHTMLGenerator(searchResults);
+    addProductPagesLinks();
 }
 
 // Fin búsqueda
@@ -97,6 +61,7 @@ function searchProducts() {
 // esta es la función que aplica cada filtro anidado, y publica las cards que pasan todos los filtros
 function filterCheckbox(products) {
     cardHTMLGenerator(filterLensTypeCheckboxes(filterProductCheckboxes(filterCategoryCheckboxes(filterBrandCheckboxes(products)))));
+    addProductPagesLinks();
 }
 
 // En este objeto, guardo los valores de true o false de cada checkbox
@@ -109,19 +74,27 @@ const filterCheckboxes = {
     camera: document.getElementById('camerasProductCheckbox'),
     lenses: document.getElementById('lensesProductCheckbox'),
     prime: document.getElementById('primeCategoryCheckbox'),
-    zoom: document.getElementById('zoomCategoryCheckbox')
+    zoom: document.getElementById('zoomCategoryCheckbox'),
+    accesories: document.getElementById('accesoriesProductCheckbox')
 };
 
 function filterProductCheckboxes(products) {
-    if (filterCheckboxes.camera.checked ^ filterCheckboxes.lenses.checked === true) {
+    if (filterCheckboxes.camera.checked ^ filterCheckboxes.lenses.checked === true ^ filterCheckboxes.accesories.checked === true) {
         if (filterCheckboxes.camera.checked === true) {
             document.getElementById('lensesProductCheckbox').disabled = true;
+            document.getElementById('accesoriesProductCheckbox').disabled = true;
         return filterCategory(products , 'camara');
-        } else {
+        } else if ( filterCheckboxes.lenses.checked === true ){
             document.getElementById('camerasProductCheckbox').disabled = true;
+            document.getElementById('accesoriesProductCheckbox').disabled = true;
             return filterCategory(products , 'lente');
+        } else {
+            document.getElementById('lensesProductCheckbox').disabled = true;
+            document.getElementById('camerasProductCheckbox').disabled = true;
+            return filterCategory(products, 'accesorio');
         }
     } else {
+        document.getElementById('accesoriesProductCheckbox').disabled = false;
         document.getElementById('lensesProductCheckbox').disabled = false;
         document.getElementById('camerasProductCheckbox').disabled = false;
         return (products);
@@ -152,7 +125,7 @@ function filterLensTypeCheckboxes(products) {
             return filterCategory(products, 'zoom');
         } else {
             document.getElementById('zoomCategoryCheckbox').disabled = true;
-            return filterCategory(products, 'prime');
+            return filterCategory(products, 'fijo');
         }
     } else {
         document.getElementById('zoomCategoryCheckbox').disabled = false;
@@ -211,10 +184,3 @@ function filterBrand(products, brand) {
     return (filteredProducts);
 }*/
 
-function filterCategory(products, categoryToFilter) {
-    let filteredProducts = [];
-    products.forEach( product => {
-        product.category.indexOf(categoryToFilter) != -1 ? filteredProducts.push(product) : false;
-    })
-    return filteredProducts;
-}

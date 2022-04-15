@@ -102,7 +102,7 @@ const CANON50 = new Product(
     'Lente Canon EF 50mm f/1.4 USM',
     'CANON50',
     'canon',
-    ['lente', 'prime', 'ff', 'apsc'],
+    ['lente', 'fijo', 'ff', 'apsc'],
     'Robustísimo y versátil lente fijo Canon. Ágil para fotografía callejera, paisajes, nocturnas y astrofotografía. Su amplísima apertura máxima de f/1.4 genera un bokeh hermoso, de nivel cinematográfico. El sistema de enfoque USM super silencioso y veloz, te va a permitir sumarle agilidad a tus tomas espontáneas en eventos sociales, fotografía callejera, y deportiva',
     80000,
     12,
@@ -137,7 +137,7 @@ const MANBEFREE = new Product(
     'Trípode Manfrotto Befree Advanced',
     'MANBEFREE',
     'manfrotto',
-    ['accesorio'],
+    ['accesorio', 'tripode'],
     'Con una capacidad de carga de 8kg y un peso de tan solo 1.5kg, este trípode de viaje Befree avanzado negro de Manfrotto es una opción de soporte robusta que puede servir como un compañero de viaje conveniente tanto para fotógrafos profesionales como para aficionados apasionados',
     38900,
     3,
@@ -148,7 +148,7 @@ const EWAUA100 = new Product(
     'Compartimento Estanco Ewa-Marine U-A100',
     'EWAUA100',
     'ewamarine',
-    ['accesorio'],
+    ['accesorio', 'estanco'],
     'Ewa Marine, el fabricante original de compartimentos estancos ha sido un innovador de la industria, confiado por organizaciones como Disney, y los militares estadounidenses para proteger sus equipos de fotografía y video durante más de 45 años. Con este compartimento totalmente sellado, podés llevar la cámara al hacer fotos bajo tormenta intensa, surf y buceo hasta 2m de profundidad. Es fácil operar la cámara ya que sus diversos componentes y botones pueden ser operados a través del PVC. El U-A está diseñado para adaptarse a casi todas las cámaras SLR comunes del mercado hoy en día, independientemente del fabricante o modelo',
     59000,
     2,
@@ -156,7 +156,19 @@ const EWAUA100 = new Product(
     0
 );
 
-const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, FUJI1655, CANONEOSR5, NIKON35, NIKOND850, EWAUA100, CANON2470, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
+const MARUMIDHG = new Product(
+    'Filtro Polarizador Marumi DHG',
+    'MARUMIDHG',
+    'marumi',
+    ['accesorio', 'filtro'],
+    'Un filtro de polarización logra mayores contrastes de color en la fotografía al aire libre. Los cielos azules se convierten en cielos azules brillantes. Con un filtro de polarización, puede tomar mejores imágenes de objetos reflectantes como agua o ventanas: se vuelven transparentes y, por lo tanto, ya no reflejan la luz solar. La serie Marumi DHG CPL combina una buena relación precio / rendimiento con las cualidades de un filtro superior desarrollado profesionalmente. La línea DHG tiene un borde de metal negro mate y un recubrimiento especial para contrarrestar los reflejos de luz no deseados. Los filtros Super DHG se caracterizan por su suciedad, aceite y revestimiento repelente al agua. Estos filtros de línea superior se encuentran entre los mejores filtros disponibles actualmente en el mercado',
+    22500,
+    5,
+    'images/marumidhg.jpg',
+    0
+);
+
+const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, FUJI1655, MARUMIDHG, CANONEOSR5, NIKON35, NIKOND850, EWAUA100, CANON2470, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
 //const catalog = [FUJIXT30, FUJIXT31, FUJIXT32, FUJIXT33]
 
 

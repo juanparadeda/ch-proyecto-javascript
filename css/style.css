@@ -12,7 +12,12 @@
 }
 
 .card-img-top:hover {
-  filter: contrast(140%);
+  filter: contrast(120%);
+  filter: brightness(120%);
+}
+
+.card-body {
+  min-height: 90px;
 }
 
 header .navbar {
