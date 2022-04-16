@@ -11,7 +11,7 @@
     <!-- Fin CSS de Bootstrap -->
     <!-- CSS Propio -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Sheipeg | Tu Tienda de Fotografía</title>
+    <title>Sheipeg | Lentes</title>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 
                     </ul>
                     <form id="searchForm" class="d-flex">
-                        <input id="searchString" class="form-control me-2" type="search" placeholder="Buscar en el catálogo"
+                        <input id="searchString" class="form-control me-2" type="search" placeholder="Buscar en Lentes"
                             aria-label="Search">
                     </form>
                 </div>
@@ -61,67 +61,11 @@
             </div>
         </nav>
     </header>
-    <h1 id="mainTitle">Sheipeg | Tu Tienda de Fotografía</h1>
-    <div class="filterContainer">
-        <div>
-            <h4>Marcas</h4>
-            <div>
-                <input class="checkbox" name="nikon" id="nikonBrandCheckbox" type="checkbox" onclick="filterCheckbox(catalog)" unchecked>
-                <label for="nikon">Nikon</label>
-            </div>
-            <div>
-                <input class="checkbox" name="canon" id="canonBrandCheckbox" type="checkbox" onclick="filterCheckbox(catalog)" unchecked>
-                <label for="canon">Canon</label>
-            </div>
-            <div>
-                <input class="checkbox" name="fuji" id="fujiBrandCheckbox" type="checkbox" onclick="filterCheckbox(catalog)" unchecked>
-                <label for="fuji">Fuji</label>
-            </div>
-        </div>
-        <div>
-            <h4>Productos</h4>
-            <div>
-                <input class="checkbox" name="cameras" id="camerasProductCheckbox" type="checkbox" onclick="filterCheckbox(catalog)"
-                    unchecked>
-                <label for="cameras">Cámaras</label>
-            </div>
-            <div>
-                <input class="checkbox" name="lenses" id="lensesProductCheckbox" type="checkbox"
-                    onclick="filterCheckbox(catalog)" unchecked>
-                <label for="lenses">Lentes</label>
-            </div>
-            <div>
-                <input class="checkbox" name="accesories" id="accesoriesProductCheckbox" type="checkbox"
-                    onclick="filterCheckbox(catalog)" unchecked>
-                <label for="accesories">Accesorios</label>
-            </div>
-        </div>
-        <div>
-            <h4>Categorías</h4>
-            <div>
-                <input class="checkbox" name="reflex" id="reflexCategoryCheckbox" type="checkbox" onclick="filterCheckbox(catalog)"
-                    unchecked>
-                <label for="reflex">Reflex</label>
-            </div>
-            <div>
-                <input class="checkbox" name="mirrorless" id="mirrorlessCategoryCheckbox" type="checkbox"
-                    onclick="filterCheckbox(catalog)" unchecked>
-                <label for="mirrorless">Mirrorless</label>
-            </div>
-            <div>
-                <input class="checkbox" name="zoom" id="zoomCategoryCheckbox" type="checkbox"
-                    onclick="filterCheckbox(catalog)" unchecked>
-                <label for="zoom">Zoom</label>
-            </div>
-            <div>
-                <input class="checkbox" name="prime" id="primeCategoryCheckbox" type="checkbox"
-                    onclick="filterCheckbox(catalog)" unchecked>
-                <label for="prime">Fijos</label>
-            </div>
-        </div>
+    <h1 id="mainTitle">Lentes</h1>
 
-    </div>
-    <container id="cardContainer" class="productsContainer d-flex">
+
+
+    <container id="cardContainer" class="productsContainer d-flex noFilter">
         <!-- Acá van las cards de productos que se populan con la función cardHTMLGenerator -->
     </container>
     <!-- Bootstrap toast -->
@@ -167,7 +111,7 @@
     <script src="js/catalog.js"></script>
     <script src="js/cardsController.js"></script>
     <script src="js/cartController.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/lensesPage.js"></script>
     
 
 </body>

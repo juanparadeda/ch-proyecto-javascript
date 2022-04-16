@@ -121,6 +121,30 @@ const NIKON35 = new Product(
     0
 );
 
+const FUJI35 = new Product(
+    'Lente Fujifilm XF 35mm f/2 R WR',
+    'FUJI35',
+    'fuji',
+    ['lente', 'fijo', 'apsc'],
+    'Ofreciendo una perspectiva normal en un paquete compacto, el objetivo XF 35mm f/2 R WR negro de Fujifilm está optimizado para su uso en cámaras de la serie X con sensores de formato APS-C, produciendo una distancia focal equivalente a 53 mm. Además, tiene una apertura máxima rápida f/2, útil para crear imágenes con poca profundidad de campo y trabajar en condiciones de poca luz. Asegurar una calidad de imagen óptima es un diseño de 9 elementos en 6 grupos que incorpora dos ED y dos elementos asféricos que trabajan para minimizar las aberraciones y la distorsión para obtener imágenes nítidas y limpias. Además, la lente tiene el recubrimiento Nano-GI que limita drásticamente los efectos de los fantasmas y los destellos. Para su funcionamiento, el objetivo está equipado con un anillo de apertura física para control táctil cuando se desee. También tiene un rápido sistema de enfoque interno AF que puede bloquearse en un objeto en sólo 0,08 segundos. Otra ventaja es la construcción resistente a la intemperie con ocho sellos en todo el cuerpo de la lente. Además, un diafragma redondeado de 9 láminas produce elementos fuera de foco agradables. Con una distancia focal equivalente a 35 mm de 53 mm, este objetivo de primer plano proporciona una perspectiva normal que resulta útil en una amplia variedad de situaciones.',
+    79800,
+    6,
+    'images/fuji35.jpg',
+    0
+);
+
+const NIKON18300 = new Product(
+    'Lente Nikon AF-S DX 18-300mm f/3.5-6.3G',
+    'NIKON18300',
+    'nikon',
+    ['lente', 'zoom', 'apsc'],
+    'El AF-S DX NIKKOR 18-300mm f / 3.5-6.3G ED VR puede hacer casi cualquier cosa: imágenes fijas, videos, paisajes, interiores, retratos, vida silvestre … lo que sea. Su rango de zoom masivo va desde gran angular (equivalente a 27 mm en 35 mm) hasta super teleobjetivo (equivalente a 450 mm en 35 mm), por lo que puede capturar primeros planos impresionantes de artistas de concierto y atletas con la misma facilidad que tomas panorámicas. Su diseño compacto y equilibrado y la tecnología de reducción de la vibración ayudan a mantener las fotos nítidas y los videos estables, y el rápido y silencioso sistema de enfoque automático minimiza el ruido de la cámara durante la grabación de video.',
+    139000,
+    4,
+    'images/nikon18300.jpg',
+    0
+);
+
 const FUJI1655 = new Product(
     'Lente Fujifilm XF 16-55mm f/2.8 R LM WR',
     'FUJI1655',
@@ -168,7 +192,7 @@ const MARUMIDHG = new Product(
     0
 );
 
-const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, FUJI1655, MARUMIDHG, CANONEOSR5, NIKON35, NIKOND850, EWAUA100, CANON2470, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
+const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, NIKON18300, FUJI1655, MARUMIDHG, FUJI35, CANONEOSR5, NIKON35, NIKOND850, EWAUA100, CANON2470, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
 //const catalog = [FUJIXT30, FUJIXT31, FUJIXT32, FUJIXT33]
 
 

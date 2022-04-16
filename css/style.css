@@ -218,6 +218,10 @@ header .navbar .container-fluid div form {
   height: auto;
   align-self: center;
 }
+.weatherCardsContainer .weatherCard:hover {
+  box-shadow: 0 0 25px 0.5px #1a237e;
+  cursor: pointer;
+}
 
 .spinner-border {
   margin-top: 50px;
@@ -236,6 +240,43 @@ header .navbar .container-fluid div form {
   color: #005662;
   text-align: center;
   margin: 20px;
+}
+
+.weatherTips {
+  width: 80%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.weatherTips .weatherTip {
+  width: 100%;
+  border: 1px solid #000051;
+  border-radius: 5px;
+}
+.weatherTips .weatherTip h4 {
+  color: #1a237e;
+  text-align: center;
+  margin: 15px;
+}
+.weatherTips .weatherTip .tip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.weatherTips .weatherTip .tip .weatherTxt {
+  margin: 20px 20px;
+  width: 60%;
+}
+.weatherTips .weatherTip .tip .weatherImg {
+  width: 30%;
+  min-width: 320px;
+  height: auto;
+  margin: 20px 20px;
+}
+.weatherTips .weatherTip .tip .weatherImg img {
+  width: 100%;
+  height: auto;
 }
 
 * {
@@ -320,6 +361,10 @@ h1 {
 
 .checkbox:checked {
   background-color: #005662;
+}
+
+.noFilter {
+  margin: 50px auto;
 }
 
 /*# sourceMappingURL=style.css.map */
