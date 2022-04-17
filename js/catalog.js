@@ -168,11 +168,48 @@ const MANBEFREE = new Product(
     'images/manfrottobefree.jpg',
     0
 );
+
+const FIVEINONE = new Product(
+    'Pantalla Reflectora 5 en 1 80cm',
+    'FIVEINONE',
+    'impact',
+    ['accesorio', 'iluminacion'],
+    'Lográ fotografías profesionales, con la versatilidad que te ofrece el reflector 5 en 1 de 80cm, sacá provecho del gran manejo de luz y sombras con sus 5 superficies: Oro, Plata, Blanco, Negro y Translúcido. Te permite una variedad de efectos: Difumina, absorbe, refleja o suaviza la luz a tu gusto. Elaborado con un resistente marco de acero flexible, que puede ser fácilmente doblado en un tamaño pequeño. Incluye una bolsa de transporte con cierre, para un fácil traslado. Elaborado con materiales resistentes e impermeables.',
+    9000,
+    7,
+    'images/5en1.jpg',
+    0
+);
+
+const TUBEXTVELLO = new Product(
+    'Tubos de Extensión para Macro Vello',
+    'TUBEXTVELLO',
+    'vello',
+    ['accesorio', 'macro'],
+    'Estos tubos de extensión te permitirán reducir la distancia mínima de enfoque de tus lentes. Se usan para fotografía macro de insectos, flores, texturas, etc. Además, vas a mantener las capacidades de autofoco, ya que cuentan con la comunicación electrónica entre el cuerpo de tu cámara y tus lentes. Al ampliar la distancia entre la lente y el sensor de tu cámara, sin modificar el sistema óptico, mientras lo tengas conectado entre tus lentes y tu cámara, se pierde la capacidad de foco a infinito de tus lentes.',
+    15900,
+    8,
+    'images/velloext.jpg',
+    0
+);
+
+const TTRAINCOVER = new Product(
+    'Funda para Lluvia Think Tank',
+    'TTRAINCOVER',
+    'ewamarine',
+    ['accesorio', 'lluvia'],
+    'Protegé tu cámara y lente con esta funda de emergencia de Think Tank. Esta protección posee una capa de DWR para protección contra lluvia, nieve, arena y polvo. Al plegarla, se guarda en una pequeña bolsa que entra en un bolsillo de campera. De este modo, si las condiciones del tiempo cambian rápidamente, en pocos segundos la podés desplegar y proteger tu equipo. Incluye elásticos para sellar todo el cuerpo y dejar el lente sin obstrucciones. También incluye mangas para poder tener contacto directo entre tus manos y los controles.',
+    59000,
+    2,
+    'images/ttfunda.jpg',
+    0
+);
+
 const EWAUA100 = new Product(
     'Compartimento Estanco Ewa-Marine U-A100',
     'EWAUA100',
     'ewamarine',
-    ['accesorio', 'estanco'],
+    ['accesorio', 'lluvia'],
     'Ewa Marine, el fabricante original de compartimentos estancos ha sido un innovador de la industria, confiado por organizaciones como Disney, y los militares estadounidenses para proteger sus equipos de fotografía y video durante más de 45 años. Con este compartimento totalmente sellado, podés llevar la cámara al hacer fotos bajo tormenta intensa, surf y buceo hasta 2m de profundidad. Es fácil operar la cámara ya que sus diversos componentes y botones pueden ser operados a través del PVC. El U-A está diseñado para adaptarse a casi todas las cámaras SLR comunes del mercado hoy en día, independientemente del fabricante o modelo',
     59000,
     2,
@@ -192,7 +229,7 @@ const MARUMIDHG = new Product(
     0
 );
 
-const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, NIKON18300, FUJI1655, MARUMIDHG, FUJI35, CANONEOSR5, NIKON35, NIKOND850, EWAUA100, CANON2470, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
+const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, NIKON18300, FUJI1655, MARUMIDHG, FUJI35, TUBEXTVELLO, CANONEOSR5, TTRAINCOVER, NIKON35, NIKOND850, EWAUA100, CANON2470, FIVEINONE, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
 //const catalog = [FUJIXT30, FUJIXT31, FUJIXT32, FUJIXT33]
 
 

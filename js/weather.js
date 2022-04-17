@@ -26,52 +26,7 @@ const locationError = () => {
     document.getElementById('yourLocation').innerHTML = `<h4>Ooops! No podemos determinar tu ubicación.</h4><h5>Te mostramos el clima para Ciudad de Buenos Aires, Argentina</h5>`
 }
 
-const publishSunnyTip = () => {
-    return (`<div class="weatherTip">
-                <h4>¡Mucho sol!</h4>
-                <div class="tip">
-                    <div class="weatherImg"><img src="images/sunny.jpg" alt="clear sky image"></div>
-                    <div class="weatherTxt">
-                        <p>Los días de sol pleno, proyectan sombras muy duras, generando altos contrastes. Estos contrastes suelen no ser bien capturados por el rango dinámico de las cámaras digitales. Te aconsejamos que aproveches la hora previa y posterior al amanecer y al atardecer. La claridad previa al amanecer y posterior al atardecer, genera luces frías, que generan un contraste de color interesante con el fondo más rojizo del cielo. Luego del amanecer o antes del atardecer, la luz solar suave y cálida es la mejor aliada de tus fotos con luz natural.</p>
-                        <p>Si así y todo decidís salir a sacar fotos con el sol cerca del cenit, podés utilizar difusores para suavizar la luz solar, y filtros polarizadores para mejorar la saturación del color del cielo</p>
-                    </div>
-                </div>
-            </div>`);
-}
 
-const publishFewClouds = () => {
-    return (`<div class="weatherTip">
-                <h4>Nubosidad muy leve</h4>
-                <div class="tip">
-                    <div class="weatherImg"><img src="images/fewclouds.jpg" alt="few clouds"></div>
-                    <div class="weatherTxt">
-                        <p>Una nubosidad leve no te va a ayudar mucho a eliminar los contrastes duros de la luz del sol cuando está alto. En estos días, lo mejor va a ser como en los días de pleno sol, aprovechar la luz suave del sol muy bajo. Esto es, cerca del amanecer y del atardecer.</p>
-                        <p>De todos modos, algunas pocas nubes pueden ayudarte a adornar el cielo azul, y la misma sombra de las nubes, puede proyectar formas interesantes sobre tus paisajes a pleno sol. Podés aprovechar un filtro polarizador para lograr saturar mejor los colores del cielo, o una pantalla difusora para emparejar la luz de tus sujetos, o bien reflejar la luz solar directa para rellenar las sombras duras</p>
-                    </div>
-                </div>
-            </div>`);
-}
-
-const publishClouds = () => {
-    return (`<div class="weatherTip">
-                <h4>Nubosidad alta</h4>
-                <div class="tip">
-                    <div class="weatherImg"><img src="images/clouds.jpg" alt=" clouds"></div>
-                    <div class="weatherTxt">
-                        <p>Los fotógrafos amamos los cielos muy nublados. Por un lado, la iluminación es muy pareja y no se presentan dificultades de exposición, al estar casi todo el escenario con similar intensidad de luz. Además, cielos tormentosos pueden generar ambientes muy dramáticos</p>
-                        <p>A veces puede suceder que si las nubes forman una capa gris clara muy lisa, se hace muy poco interesante. En estos casos, es mejor no incluir al cielo en nuestras imágenes, y aprovechar la iluminación para fotografías más íntimas: retratos, fotografía macro, o arquitectura</p>
-                    </div>
-                </div>
-            </div>`);
-}
-
-const generateWeatherTips = (weatherDay) => {
-    HTML = '';
-    weatherDay.clouds < 11 ? HTML += publishSunnyTip() : false ;
-    weatherDay.clouds >= 11 && weatherDay.clouds < 25 ? HTML += publishFewClouds() : false;
-    weatherDay.clouds >= 25 ? HTML += publishClouds() : false;
-    document.getElementById('weatherTips').innerHTML = HTML;
-}
 
 // fetchWeather recibe latitud y longitud como parámetros. Llama a la One Call API de openweathermap y del json que me devuelve, sólo uso el array daily, y se lo paso a la función generateWeatherCards
 let weatherArray = [];

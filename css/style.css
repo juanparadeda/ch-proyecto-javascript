@@ -251,6 +251,7 @@ header .navbar .container-fluid div form {
   width: 100%;
   border: 1px solid #000051;
   border-radius: 5px;
+  margin: 20px;
 }
 .weatherTips .weatherTip h4 {
   color: #1a237e;
