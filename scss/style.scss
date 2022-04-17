@@ -46,11 +46,12 @@ h1 {
 }
 
 .productsContainer {
-    margin: 50px auto 50px 170px;
-    justify-content: center;
+    margin: 50px auto 50px 180px;
+    justify-content: flex-start;
     flex-wrap: wrap;
     .card {
         margin: 20px;
+
     }
 }
 .btn-primary {

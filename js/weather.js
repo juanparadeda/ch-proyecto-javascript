@@ -2,7 +2,7 @@
 
 // También dentro de openweathermap.org , voy a usar la API Geocoding, para convertir las coordenadas de latitud y longitud, en locaciones reconocibles. Como esta API devuelve al país en su código (AR para Argentina, por ejemplo), también tengo que usar el constructor IntlDisplayNames() para convertir esos códigos en nombres de país
 
-//La idea para la entrega final, es mostrar el pronóstico del tiempo. Y dar sugerencias de técnica fotográfica y productos sugeridos según si llueve, hay mucho sol, frío extremo, etc. Para esta entrega de desafío, sólo muestro el pronóstico del tiempo según la ubicación actual del usuario. 
+// Al hacer click sobre cada card, se muestran sugerencias de técnica fotográfica y productos sugeridos según si llueve, hay mucho sol, etc.
 
 //Para obtener la ubicación, uso la web API Geolocation https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API .
 
@@ -28,7 +28,7 @@ const locationError = () => {
 
 
 
-// fetchWeather recibe latitud y longitud como parámetros. Llama a la One Call API de openweathermap y del json que me devuelve, sólo uso el array daily, y se lo paso a la función generateWeatherCards
+// fetchWeather recibe latitud y longitud como parámetros. Llama a la One Call API de openweathermap y del json que me devuelve, sólo uso el array daily. Ese array lo guardo en  la variable global weatherArray, porque luego lo voy a utilizar sincrónicamente en weatherTips.js . Ahora lo uso para generar las weather cards en generateWeatherCards y genero el HTML con los tips para el día de hoy [0] en la función generateWeatherTips
 let weatherArray = [];
 const fetchWeather = (latitude,longitude) => {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,current&lang=sp&units=metric&appid=67a27983b66e525b5d30f8b16cd31277`)
@@ -65,8 +65,6 @@ const generateWeatherCards = (weatherMapAPIArray) => {
         const weekDay = parsedDate.setLocale('es').toLocaleString({ weekday: 'long' });
         const dayNumber = parsedDate.setLocale('es').toLocaleString({ month: 'numeric', day: 'numeric' });
         const clouds = day.clouds;
-        const tempMin = Math.round(day.temp.min);
-        const tempMax = Math.round(day.temp.max);
         const parsedSunrise = luxon.DateTime.fromSeconds(day.sunrise);
         const parsedSunset = luxon.DateTime.fromSeconds(day.sunset);
         const sunriseTime = parsedSunrise.toLocaleString(luxon.DateTime.TIME_24_SIMPLE);
@@ -79,8 +77,6 @@ const generateWeatherCards = (weatherMapAPIArray) => {
          <img src='http://openweathermap.org/img/wn/${icon}@2x.png'>
          <h6>Nubosidad: ${clouds}%</h6>
          <h6>Prob. lluvias: ${probRain}%</h6>
-         <h6>Temp mínima: ${tempMin} °C</h6>
-         <h6>Temp máxima: ${tempMax} °C</h6>
          <h6>Amanecer: ${sunriseTime}</h6>
          <h6>Atardecer: ${sunsetTime}</h6>
      </div>`;

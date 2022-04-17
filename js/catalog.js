@@ -169,6 +169,19 @@ const MANBEFREE = new Product(
     0
 );
 
+const JOBYGORILLA = new Product(
+    'Gorilla Pod Joby 3Kg',
+    'JOBYGORILLA',
+    'joby',
+    ['accesorio', 'tripode'],
+    'Kit de trípode ligero y nivelado. Diseñado para admitir cámaras reflex y mirroless o dispositivos que pesen hasta 3 kg. Con un cabezal panorámico de 360° y una inclinación de 90°, su kit GorillaPod 3K es imprescindible para cualquier fotógrafo, director de fotografía o vlogger. Los anillos de goma y las empuñaduras para los pies brindan mayor estabilidad en terrenos difíciles. Las patas envolventes le permiten asegurar el equipo de cámara profesional a prácticamente cualquier superficie. Funciona con accesorios de nivel profesional como GripTight PRO Mount',
+    9800,
+    14,
+    'images/jobygorilla.jpg',
+    0
+);
+
+
 const FIVEINONE = new Product(
     'Pantalla Reflectora 5 en 1 80cm',
     'FIVEINONE',
@@ -229,7 +242,7 @@ const MARUMIDHG = new Product(
     0
 );
 
-const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, NIKON18300, FUJI1655, MARUMIDHG, FUJI35, TUBEXTVELLO, CANONEOSR5, TTRAINCOVER, NIKON35, NIKOND850, EWAUA100, CANON2470, FIVEINONE, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
+const catalog = [FUJIXT30, CANON50, MANBEFREE, CANONEOS80D, NIKON18300, FUJI1655, MARUMIDHG, FUJI35, TUBEXTVELLO, CANONEOSR5, TTRAINCOVER, JOBYGORILLA, NIKON35, NIKOND850, EWAUA100, CANON2470, FIVEINONE, NIKONZ9, FUJIXT4]; // Catálogo de productos completo.
 //const catalog = [FUJIXT30, FUJIXT31, FUJIXT32, FUJIXT33]
 
 

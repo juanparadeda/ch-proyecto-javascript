@@ -62,13 +62,20 @@
 
 .discountCodeInput {
     display: flex;
-    width: 400px;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-right: 0;
     align-items: center;
     .btn {
         width: unset;
     }
     input {
         height: 42px;
+    }
+}
+
+.cartSummary {
+    margin-top: 75px;
+    h5 {
+        text-align: right;
     }
 }

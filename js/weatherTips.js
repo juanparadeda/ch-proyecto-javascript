@@ -16,7 +16,8 @@ const publishSunnyTip = () => {
 
 
 const publishSomeClouds = () => {
-    return (`<div class="weatherTip">
+    const someCloudsProducts = filterCategory(catalog, 'tripode')
+    let someCloudsHTML = `<div class="weatherTip">
                 <h4>Nubosidad moderada</h4>
                 <div class="tip">
                     <div class="weatherImg"><img src="images/someclouds.jpg" alt="some clouds"></div>
@@ -25,7 +26,9 @@ const publishSomeClouds = () => {
                         <p>Como es un momento de escasa luz, un trípode puede ayudarte a conseguir una buena nitidez si necesitás usar tiempos de exposición elevados. Tené en cuenta que cuando está cerca del horizonte, la posición del sol respecto de tu cámara cambia rápidamente. Vas a tener que balancear el tiempo de exposición de manera que te permita exponer bien, pero sin perder nitidez.</p>
                     </div>
                 </div>
-            </div>`);
+                <container id="cardContainer" class="productsContainer d-flex noFilter">`;
+    someCloudsHTML += productCardCreator(someCloudsProducts) + `</container></div>`;
+    return someCloudsHTML;
 }
 const publishFewClouds = () => {
     const fewCloudsProducts = filterCategory(catalog, 'iluminacion').concat(filterCategory(catalog, 'filtro'));
@@ -78,11 +81,11 @@ const publishRain = () => {
 
 const generateWeatherTips = (weatherDay) => {
     let HTML = '';
+    weatherDay.pop >= 0.1 ? HTML += publishRain(): false;
     weatherDay.clouds < 11 ? HTML += publishSunnyTip() : false ;
     weatherDay.clouds >= 11 && weatherDay.clouds < 25 ? HTML += publishFewClouds() : false;
     weatherDay.clouds >= 25 && weatherDay.clouds < 50 ? HTML += publishSomeClouds() : false;
     weatherDay.clouds >= 50 ? HTML += publishClouds() : false;
-    weatherDay.pop >= 0.1 ? HTML += publishRain(): false;
     document.getElementById('weatherTips').innerHTML = HTML;
     addProductPagesLinks();
 }

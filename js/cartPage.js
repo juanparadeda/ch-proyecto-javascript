@@ -41,11 +41,11 @@ function showCart() {
         <button type="button" class=" removeFromCartPage btn-close" id="${cart[i].id}removeButton" aria-label="Close"></button>
     </div>`
     }
-    cardsHTML += `<h5 id='cartPrice'>Precio total de tus productos $ ${getCartPrice()}</h5>
+    cardsHTML += `<div class="cartSummary"><h5 id='cartPrice'>Precio total de tus productos $ ${getCartPrice()}</h5>
     <form class="discountCodeInput" id='discountCodeInput'><input class="col-8" id="discountCode" type="text" placeholder="Ingresá acá tu código de descuento">
     <button type="submit" href="#" class="col-4 btn btn-primary">Verificar</button></form>
     <h5 id="finalPrice">Precio Final de tus productos (+IVA 21%): $ ${getCartPrice()*1.21}</h5>
-    <h5 id="discountApplied">No tenés descuentos aplicados</h5>`
+    <h5 id="discountApplied">No tenés descuentos aplicados</h5></div>`
     document.getElementById('cartCardsContainer').innerHTML = cardsHTML;
     for (let i = 0; i< removeButton.length; i++) {
         removeButton[i].onclick = removeProductFromCartPage;

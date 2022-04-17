@@ -143,8 +143,8 @@ header .navbar .container-fluid div form {
 
 .discountCodeInput {
   display: flex;
-  width: 400px;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-right: 0;
   align-items: center;
 }
 .discountCodeInput .btn {
@@ -152,6 +152,13 @@ header .navbar .container-fluid div form {
 }
 .discountCodeInput input {
   height: 42px;
+}
+
+.cartSummary {
+  margin-top: 75px;
+}
+.cartSummary h5 {
+  text-align: right;
 }
 
 .productPageContainer {
@@ -320,8 +327,8 @@ h1 {
 }
 
 .productsContainer {
-  margin: 50px auto 50px 170px;
-  justify-content: center;
+  margin: 50px auto 50px 180px;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .productsContainer .card {
