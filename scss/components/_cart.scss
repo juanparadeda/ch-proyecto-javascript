@@ -79,3 +79,9 @@
         text-align: right;
     }
 }
+
+.dis {
+    &:disabled{
+        background-color: #666;
+    }
+}

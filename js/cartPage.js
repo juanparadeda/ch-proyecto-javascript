@@ -45,7 +45,8 @@ function showCart() {
     <form class="discountCodeInput" id='discountCodeInput'><input class="col-8" id="discountCode" type="text" placeholder="Ingresá acá tu código de descuento">
     <button type="submit" href="#" class="col-4 btn btn-primary">Verificar</button></form>
     <h5 id="finalPrice">Precio Final de tus productos (+IVA 21%): $ ${getCartPrice()*1.21}</h5>
-    <h5 id="discountApplied">No tenés descuentos aplicados</h5></div>`
+    <h5 id="discountApplied">No tenés descuentos aplicados</h5>
+    <form class="discountCodeInput"><button type="submit" href="#" class="btn btn-primary dis" disabled>Confirmar y pagar</button></form></div>`
     document.getElementById('cartCardsContainer').innerHTML = cardsHTML;
     for (let i = 0; i< removeButton.length; i++) {
         removeButton[i].onclick = removeProductFromCartPage;
