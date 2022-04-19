@@ -11,10 +11,11 @@
 
 // locationSuccess llama a dos funciones. fetchWeather va a llamar a la API del clima para traer el pronóstico del tiempo para esas coordenadas. getLocationReadable va a llamar a la API de Geocoding para convertir las coordenadas a una locación leíble por seres humanos
 const locationSuccess = (position) => {
-    const lat = position.coords.latitude;
-    const long = position.coords.longitude;
-    fetchWeather(lat, long);
-    getLocationReadable(lat, long);
+    const {latitude, longitude} = position.coords;
+    //const lat = position.coords.latitude;
+    //const long = position.coords.longitude;
+    fetchWeather(latitude, longitude);
+    getLocationReadable(latitude, longitude);
 }
 
 
