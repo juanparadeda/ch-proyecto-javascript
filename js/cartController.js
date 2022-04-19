@@ -26,11 +26,7 @@ const updateToastWithNoStockInfo = (product) => {
 
 // Agregar y quitar del carrito
 
-// Esta función simplemente actualiza todas las propiedades que deben actualizarse cada vez que se suma un producto al carrito, y muestra la toast correspondiente. No hace el push en sí del objeto producto, al objeto carrito
-
-
-
-// Esta función es la que efectivamente agrega un producto al carrito. Llama a la función addOneQtyToCart, y sólo hace el push en el caso de que el objeto producto no esté en el carrito
+// Esta función es la que efectivamente agrega un producto al carrito. Primero verifica si el producto ya está en el carrito. Si ya está, solo aumenta en uno la cantidad. Sólo hace el push en el caso de que el objeto producto no esté en el carrito
 function addToCart(productId) {
     const productAlreadyInCart = cart.find(product => product.id == productId); 
     const productInCatalog = catalog.find(product => product.id == productId); 

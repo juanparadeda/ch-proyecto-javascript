@@ -1,19 +1,12 @@
+// Página de lentes.html . Esencialmente, toma del catálogo todos los productos con la categoría 'lente', y los publica. La búsqueda la llama limitada dentro del catálogo ya filtrado por cámaras
+
 const lensesCatalog = filterCategory(catalog, 'lente')
 cardHTMLGenerator(lensesCatalog);
 addProductPagesLinks();
 
+const searchProductsTrigger = () => searchProducts(lensesCatalog)
+
 let triggerSearch = document.getElementById('searchString');
-triggerSearch.addEventListener('input', searchProducts);
-function searchProducts() {
-    let searchString = document.getElementById('searchString').value;
-    searchResults = [];
-    for (let i = 0; i < lensesCatalog.length; i++) {
-        if (lensesCatalog[i].name.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(lensesCatalog[i]);
-        } else if (lensesCatalog[i].description.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(lensesCatalog[i]);
-        }
-    }
-    cardHTMLGenerator(searchResults);
-    addProductPagesLinks();
-}
+triggerSearch.addEventListener('input', searchProductsTrigger);
+
+

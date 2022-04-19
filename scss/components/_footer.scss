@@ -1,0 +1,36 @@
+footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: $primary-light;
+    .leftUl {
+        list-style: none;
+        padding: 5px;
+        margin: 10px 0;
+        border-right: 1px solid $primary-dark;
+        li {
+            text-align: right;
+        }
+    }
+    .rightUl {
+        list-style: none;
+        padding: 5px;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-wdith: 650px) {
+    footer {
+        .leftUl {
+            li {
+                font-size: 14px;
+            }
+        }
+        .rightUl {
+            li {
+                font-size: 14px;
+            }
+        }
+    }
+}

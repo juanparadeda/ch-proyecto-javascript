@@ -4,9 +4,14 @@ const accesoriesCatalog = filterCategory(catalog, 'accesorio')
 cardHTMLGenerator(accesoriesCatalog);
 addProductPagesLinks();
 
+const searchProductsTrigger = () => searchProducts(accesoriesCatalog)
+
 let triggerSearch = document.getElementById('searchString');
-triggerSearch.addEventListener('input', searchProducts);
-function searchProducts() {
+triggerSearch.addEventListener('input', searchProductsTrigger);
+
+
+
+/*function searchProducts() {
     let searchString = document.getElementById('searchString').value;
     searchResults = [];
     for (let i = 0; i < accesoriesCatalog.length; i++) {
@@ -18,4 +23,4 @@ function searchProducts() {
     }
     cardHTMLGenerator(searchResults);
     addProductPagesLinks();
-}
+}*/

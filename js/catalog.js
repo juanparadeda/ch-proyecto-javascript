@@ -1,3 +1,5 @@
+// Catálogo de productos
+
 class Product {
     constructor (name, id, brand, category, description, price, stock, image, amountInCart){
         this.name = name;
@@ -90,7 +92,7 @@ const CANON2470 = new Product(
     'Lente Canon EF 24-70mm f/2.8L II USM',
     'CANON2470',
     'canon',
-    ['lente', 'zoom', 'ff', 'apsc'],
+    ['lente', 'zoom', 'reflex', 'ff', 'apsc'],
     'Excelente objetivo de alta gama de la serie L de Canon. Distancia focal de 24 a 70mm (equivalente a 38.4 a 112mm si se utiliza en cámaras con sensor APSC. Con apertura máxima de f/2.8 , te va a permitir usar velocidades de obturación muy rápidas y sensibilidades bajas, maximizando la nitidez y minimizando el grano del sensor de tu cámara. Incluye parasol original Canon.',
     529000,
     4,
@@ -102,7 +104,7 @@ const CANON50 = new Product(
     'Lente Canon EF 50mm f/1.4 USM',
     'CANON50',
     'canon',
-    ['lente', 'fijo', 'ff', 'apsc'],
+    ['lente', 'fijo', 'reflex', 'ff', 'apsc'],
     'Robustísimo y versátil lente fijo Canon. Ágil para fotografía callejera, paisajes, nocturnas y astrofotografía. Su amplísima apertura máxima de f/1.4 genera un bokeh hermoso, de nivel cinematográfico. El sistema de enfoque USM super silencioso y veloz, te va a permitir sumarle agilidad a tus tomas espontáneas en eventos sociales, fotografía callejera, y deportiva',
     80000,
     12,
@@ -125,7 +127,7 @@ const FUJI35 = new Product(
     'Lente Fujifilm XF 35mm f/2 R WR',
     'FUJI35',
     'fuji',
-    ['lente', 'fijo', 'apsc'],
+    ['lente', 'fijo', 'mirrorless','apsc'],
     'Ofreciendo una perspectiva normal en un paquete compacto, el objetivo XF 35mm f/2 R WR negro de Fujifilm está optimizado para su uso en cámaras de la serie X con sensores de formato APS-C, produciendo una distancia focal equivalente a 53 mm. Además, tiene una apertura máxima rápida f/2, útil para crear imágenes con poca profundidad de campo y trabajar en condiciones de poca luz. Asegurar una calidad de imagen óptima es un diseño de 9 elementos en 6 grupos que incorpora dos ED y dos elementos asféricos que trabajan para minimizar las aberraciones y la distorsión para obtener imágenes nítidas y limpias. Además, la lente tiene el recubrimiento Nano-GI que limita drásticamente los efectos de los fantasmas y los destellos. Para su funcionamiento, el objetivo está equipado con un anillo de apertura física para control táctil cuando se desee. También tiene un rápido sistema de enfoque interno AF que puede bloquearse en un objeto en sólo 0,08 segundos. Otra ventaja es la construcción resistente a la intemperie con ocho sellos en todo el cuerpo de la lente. Además, un diafragma redondeado de 9 láminas produce elementos fuera de foco agradables. Con una distancia focal equivalente a 35 mm de 53 mm, este objetivo de primer plano proporciona una perspectiva normal que resulta útil en una amplia variedad de situaciones.',
     79800,
     6,
@@ -137,7 +139,7 @@ const NIKON18300 = new Product(
     'Lente Nikon AF-S DX 18-300mm f/3.5-6.3G',
     'NIKON18300',
     'nikon',
-    ['lente', 'zoom', 'apsc'],
+    ['lente', 'zoom', 'reflex', 'apsc'],
     'El AF-S DX NIKKOR 18-300mm f / 3.5-6.3G ED VR puede hacer casi cualquier cosa: imágenes fijas, videos, paisajes, interiores, retratos, vida silvestre … lo que sea. Su rango de zoom masivo va desde gran angular (equivalente a 27 mm en 35 mm) hasta super teleobjetivo (equivalente a 450 mm en 35 mm), por lo que puede capturar primeros planos impresionantes de artistas de concierto y atletas con la misma facilidad que tomas panorámicas. Su diseño compacto y equilibrado y la tecnología de reducción de la vibración ayudan a mantener las fotos nítidas y los videos estables, y el rápido y silencioso sistema de enfoque automático minimiza el ruido de la cámara durante la grabación de video.',
     139000,
     4,
@@ -149,7 +151,7 @@ const FUJI1655 = new Product(
     'Lente Fujifilm XF 16-55mm f/2.8 R LM WR',
     'FUJI1655',
     'fuji',
-    ['lente', 'zoom', 'apsc'],
+    ['lente', 'zoom', 'mirrorless','apsc'],
     'Un objetivo zoom resistente a las inclemencias del tiempo con una abertura constante de F2.8 en las longitudes focales equivalente a 24 mm en gran angular hasta 84 mm en teleobjetivo medio, el XF 16-55 mm promete ofrecer imágenes de extraordinaria nitidez incluso con aberturas amplias en toda la gama del zoom',
     235000,
     3,

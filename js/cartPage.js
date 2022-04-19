@@ -1,3 +1,5 @@
+// Este archivo JS interactúa con la página cart.html
+
 // Función para calcular el precio del carrito
 const getCartPrice = () => {
     return cart.reduce((acc, current) =>{

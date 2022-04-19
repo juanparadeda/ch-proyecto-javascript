@@ -1,19 +1,11 @@
+// Este archivo interactúa con la página cameras.html . Esencialmente, toma del catálogo todos los productos con la categoría 'camara', y los publica. La búsqueda la llama limitada dentro del catálogo ya filtrado por cámaras
+
 const camerasCatalog = filterCategory(catalog, 'camara')
 cardHTMLGenerator(camerasCatalog);
 addProductPagesLinks();
 
+const searchProductsTrigger = () => searchProducts(camerasCatalog)
+
 let triggerSearch = document.getElementById('searchString');
-triggerSearch.addEventListener('input', searchProducts);
-function searchProducts() {
-    let searchString = document.getElementById('searchString').value;
-    searchResults = [];
-    for (let i = 0; i < camerasCatalog.length; i++) {
-        if (camerasCatalog[i].name.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(camerasCatalog[i]);
-        } else if (camerasCatalog[i].description.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(camerasCatalog[i]);
-        }
-    }
-    cardHTMLGenerator(searchResults);
-    addProductPagesLinks();
-}
+triggerSearch.addEventListener('input', searchProductsTrigger);
+

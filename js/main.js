@@ -1,61 +1,13 @@
+// Archivo js principal que se dispara desde el index.html
+
 cardHTMLGenerator(catalog); // Publico las cards de todo el catálogo
-addProductPagesLinks();
+addProductPagesLinks(); // Agrego los links a las páginas de cada producto
 
 // Búsqueda
+const searchProductsTrigger = () => searchProducts(catalog);
 let triggerSearch = document.getElementById('searchString');
-triggerSearch.addEventListener('input', searchProducts);
-function searchProducts() {
-    let searchString = document.getElementById('searchString').value;
-    searchResults = [];
-    for (let i = 0; i < catalog.length; i++) {
-        if (catalog[i].name.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(catalog[i]);
-        } else if (catalog[i].description.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(catalog[i]);
-        }
-    }
-    cardHTMLGenerator(searchResults);
-    addProductPagesLinks();
-}
-
+triggerSearch.addEventListener('input', searchProductsTrigger);
 // Fin búsqueda
-
-
-
-// addShipping no la estoy usando por ahora
-/*function addShipping() {
-    if (cart.shippingPrice != 0) { // Si ya había un envío cargado en el carrito, se reemplaza por el que se agrega
-        cart.shippingPrice = 0;
-        alert('Se reemplazará el envío preexistente por este envío');
-    };
-    while (cart.shippingPrice === 0) {
-        shippingDestination = prompt('Opciones: AMBA | interior');
-        if (shippingDestination == 'AMBA') { // Envío a AMBA
-            cart.shippingPrice = 1500;
-            console.log('Se agregó envío a zona AMBA');
-        } else if (shippingDestination == 'interior') { // Envío al interior
-            cart.shippingPrice = 5000;
-            console.log('Se agregó envío al interior');
-        } else { // Opción de envío no válida
-            alert('Opción no válida. No se agregó envío');
-            break;
-        };
-    };
-};*/
-
-// emptyCart no la estoy usando por ahora
-/*function emptyCart() { // Resetea todas las propiedades de carrito
-    cart.products = [];
-    cart.productsPrice = 0;
-    cart.shippingPrice = 0;
-    cart.amountOfProducts = 0;
-    console.log('Se vació el carrito');
-}*/
-
-
-
-// ####### FILTROS #######
-// Por ahora, sólo están aplicados con las checkboxes al estilo Amazon. Si checkeas una marca, te deshabilita las otras marcas, si checkeás un tipo de producto, te deshabilita el otro. Guardo los estados true/false de cada checkbox en el objeto filterCheckboxes. Los checkbox llaman a la función filterCheckbox, que anida ambos criterios de filtro: el de marca y el de tipo de producto (reflex / mirrorless). Para ambos criterios, la primera pregunta del if, es un XOR (O EXCLUYENTE) => Si hay UNA Y SÓLO UNA checkbox checkeada, aplica el filtro. Si no, no lo aplica y la función devuelve el mismo array que recibió
 
 
 // esta es la función que aplica cada filtro anidado, y publica las cards que pasan todos los filtros
@@ -78,6 +30,8 @@ const filterCheckboxes = {
     accesories: document.getElementById('accesoriesProductCheckbox')
 };
 
+
+// Esta función verifica el estado de cada checkbox por tipo de producto (lente, cámara, accesorio) y deshabilita los que son excluyentes entre sí (si checkeo lentes, se deschequean accesorios y cámaras)
 function filterProductCheckboxes(products) {
     if (filterCheckboxes.camera.checked ^ filterCheckboxes.lenses.checked === true ^ filterCheckboxes.accesories.checked === true) {
         if (filterCheckboxes.camera.checked === true) {
@@ -171,16 +125,3 @@ function filterBrand(products, brand) {
     }
     return (filteredProducts);
 }
-
-// Función que ejecuta el filtro por categoría, luego de haber capturado arriba los estados de los checkbox
-/*function filterCategory(products, category) {
-    let filteredProducts = [];
-    for (let i = 0; i < products.length; i++) {
-        
-        if (products[i].category == category) {
-            filteredProducts.push(products[i]);
-        }
-    }
-    return (filteredProducts);
-}*/
-

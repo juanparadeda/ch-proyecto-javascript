@@ -1,3 +1,5 @@
+// Acá agrupo todos los tips fotográficos según el clima 
+
 const publishSunnyTip = () => {
     const sunProducts = filterCategory(catalog, 'iluminacion').concat(filterCategory(catalog, 'filtro'));
     let sunnyHTML = `<div class="weatherTip">
