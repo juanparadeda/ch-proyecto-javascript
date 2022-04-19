@@ -21,7 +21,7 @@ const productCardCreator = (products) => {
 
 
 function cardHTMLGenerator(products) {
-    let cardsHTML = productCardCreator(products);
+    const cardsHTML = productCardCreator(products);
     document.getElementById("cardContainer").innerHTML = cardsHTML;
 }
 

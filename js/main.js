@@ -3,11 +3,7 @@
 cardHTMLGenerator(catalog); // Publico las cards de todo el catálogo
 addProductPagesLinks(); // Agrego los links a las páginas de cada producto
 
-// Búsqueda
-const searchProductsTrigger = () => searchProducts(catalog);
-let triggerSearch = document.getElementById('searchString');
-triggerSearch.addEventListener('input', searchProductsTrigger);
-// Fin búsqueda
+
 
 
 // esta es la función que aplica cada filtro anidado, y publica las cards que pasan todos los filtros
@@ -23,68 +19,82 @@ const filterCheckboxes = {
     fuji: document.getElementById('fujiBrandCheckbox'),
     reflex: document.getElementById('reflexCategoryCheckbox'),
     mirrorless: document.getElementById('mirrorlessCategoryCheckbox'),
-    camera: document.getElementById('camerasProductCheckbox'),
-    lenses: document.getElementById('lensesProductCheckbox'),
     prime: document.getElementById('primeCategoryCheckbox'),
     zoom: document.getElementById('zoomCategoryCheckbox'),
+    camera: document.getElementById('camerasProductCheckbox'),
+    lenses: document.getElementById('lensesProductCheckbox'),   
     accesories: document.getElementById('accesoriesProductCheckbox')
 };
+// Búsqueda. uso Object.keys para que al buscar con la barra de búsqueda, se deschequeen todas las checkbox y que no se preste a confusión a la UX
+const searchProductsTrigger = () => {
+    Object.keys(filterCheckboxes).forEach(key => {
+        filterCheckboxes[key].checked = false;
+        filterCheckboxes[key].disabled = false;
+    })
+    searchProducts(catalog);
 
+}
+const triggerSearch = document.getElementById('searchString');
+triggerSearch.addEventListener('input', searchProductsTrigger);
+// Fin búsqueda
 
 // Esta función verifica el estado de cada checkbox por tipo de producto (lente, cámara, accesorio) y deshabilita los que son excluyentes entre sí (si checkeo lentes, se deschequean accesorios y cámaras)
 function filterProductCheckboxes(products) {
-    if (filterCheckboxes.camera.checked ^ filterCheckboxes.lenses.checked === true ^ filterCheckboxes.accesories.checked === true) {
-        if (filterCheckboxes.camera.checked === true) {
-            document.getElementById('lensesProductCheckbox').disabled = true;
-            document.getElementById('accesoriesProductCheckbox').disabled = true;
-        return filterCategory(products , 'camara');
-        } else if ( filterCheckboxes.lenses.checked === true ){
-            document.getElementById('camerasProductCheckbox').disabled = true;
-            document.getElementById('accesoriesProductCheckbox').disabled = true;
+    const {camera, lenses, accesories} = filterCheckboxes;
+    if (camera.checked ^ lenses.checked ^ accesories.checked ) {
+        if (camera.checked) {
+            lenses.disabled = true;
+            accesories.disabled = true;
+            return filterCategory(products , 'camara');
+        } else if (lenses.checked){
+            camera.disabled = true;
+            accesories.disabled = true;
             return filterCategory(products , 'lente');
         } else {
-            document.getElementById('lensesProductCheckbox').disabled = true;
-            document.getElementById('camerasProductCheckbox').disabled = true;
+            lenses.disabled = true;
+            camera.disabled = true;
             return filterCategory(products, 'accesorio');
         }
     } else {
-        document.getElementById('accesoriesProductCheckbox').disabled = false;
-        document.getElementById('lensesProductCheckbox').disabled = false;
-        document.getElementById('camerasProductCheckbox').disabled = false;
+        accesories.disabled = false;
+        lenses.disabled = false;
+        camera.disabled = false;
         return (products);
     }
 }
 
 // Esta función captura los checkboxes y dispara los filtros por categoría. Además, deshabilita filtros excluyentes (si se selecciona una categoría, se deshabilitan el resto). Estas categorías aplican tanto a lentes como a cámaras. Por eso chequear mirrorless no deshabilita los tipos de lentes.
 function filterCategoryCheckboxes(products) {
-    if (filterCheckboxes.reflex.checked ^ filterCheckboxes.mirrorless.checked === true) {
-        if (filterCheckboxes.reflex.checked === true) {
-            document.getElementById('mirrorlessCategoryCheckbox').disabled = true;
+    const {reflex, mirrorless} = filterCheckboxes;
+    if (reflex.checked ^ mirrorless.checked) {
+        if (filterCheckboxes.reflex.checked) {
+            mirrorless.disabled = true;
             return filterCategory(products, 'reflex');
         } else {
-            document.getElementById('reflexCategoryCheckbox').disabled = true;
+            reflex.disabled = true;
             return filterCategory(products, 'mirrorless');
         }
     } else {
-        document.getElementById('reflexCategoryCheckbox').disabled = false;
-        document.getElementById('mirrorlessCategoryCheckbox').disabled = false;
+        reflex.disabled = false;
+        mirrorless.disabled = false;
         return (products);
     }
 }
 
 // Esta función captura los checkboxes y dispara los filtros por tipo de lente (zoom, fijo). Además, deshabilita filtros excluyentes (si se selecciona una categoría, se deshabilitan el resto)
 function filterLensTypeCheckboxes(products) {
-    if (filterCheckboxes.zoom.checked ^ filterCheckboxes.prime.checked === true){
-        if (filterCheckboxes.zoom.checked === true) {
-            document.getElementById('primeCategoryCheckbox').disabled = true;
+    let {zoom, prime} = filterCheckboxes;
+    if (zoom.checked ^ prime.checked){
+        if (zoom.checked) {
+            prime.disabled = true;
             return filterCategory(products, 'zoom');
         } else {
-            document.getElementById('zoomCategoryCheckbox').disabled = true;
+            zoom.disabled = true;
             return filterCategory(products, 'fijo');
         }
     } else {
-        document.getElementById('zoomCategoryCheckbox').disabled = false;
-        document.getElementById('primeCategoryCheckbox').disabled = false;
+        zoom.disabled = false;
+        prime.disabled = false;
         return products;
     }
 }
@@ -92,25 +102,25 @@ function filterLensTypeCheckboxes(products) {
 
 // Esta función captura los checkboxes y dispara los filtros por marca. Además, deshabilita filtros excluyentes (si se selecciona una marca, se deshabilitan el resto)
 function filterBrandCheckboxes(products) {
-    if (filterCheckboxes.nikon.checked ^ filterCheckboxes.canon.checked ^ filterCheckboxes.fuji.checked === true) {
-        filteredProducts = [];
-        if (filterCheckboxes.nikon.checked === true) {
-            document.getElementById('canonBrandCheckbox').disabled = true;
-            document.getElementById('fujiBrandCheckbox').disabled = true;
+    const {nikon, canon, fuji} = filterCheckboxes;
+    if (nikon.checked ^ canon.checked ^ fuji.checked) {
+        if (nikon.checked) {
+            canon.disabled = true;
+            fuji.disabled = true;
             return filterBrand(products, 'nikon');
-        } else if (filterCheckboxes.canon.checked === true) {
-            document.getElementById('nikonBrandCheckbox').disabled = true;
-            document.getElementById('fujiBrandCheckbox').disabled = true;
+        } else if (filterCheckboxes.canon.checked) {
+            nikon.disabled = true;
+            fuji.disabled = true;
             return filterBrand(products, 'canon');
         } else {
-            document.getElementById('canonBrandCheckbox').disabled = true;
-            document.getElementById('nikonBrandCheckbox').disabled = true;
+            canon.disabled = true;
+            nikon.disabled = true;
             return filterBrand(products, 'fuji');
         }
     } else {
-        document.getElementById('nikonBrandCheckbox').disabled = false;
-        document.getElementById('canonBrandCheckbox').disabled = false;
-        document.getElementById('fujiBrandCheckbox').disabled = false;
+        nikon.disabled = false;
+        canon.disabled = false;
+        fuji.disabled = false;
         return (products);
     }
 }

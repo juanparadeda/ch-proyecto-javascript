@@ -6,6 +6,6 @@ addProductPagesLinks();
 
 const searchProductsTrigger = () => searchProducts(camerasCatalog)
 
-let triggerSearch = document.getElementById('searchString');
+const triggerSearch = document.getElementById('searchString');
 triggerSearch.addEventListener('input', searchProductsTrigger);
 

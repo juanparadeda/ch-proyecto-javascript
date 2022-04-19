@@ -6,5 +6,5 @@ addProductPagesLinks();
 
 const searchProductsTrigger = () => searchProducts(accesoriesCatalog)
 
-let triggerSearch = document.getElementById('searchString');
+const triggerSearch = document.getElementById('searchString');
 triggerSearch.addEventListener('input', searchProductsTrigger);
