@@ -276,6 +276,11 @@ header .navbar .container-fluid div form {
   margin: 20px;
 }
 
+.tipsAnchor {
+  position: relative;
+  top: -50px;
+}
+
 .weatherTips {
   width: 80%;
   max-width: 1200px;
@@ -349,6 +354,10 @@ footer .rightUl {
   transition: all 0.5s;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -365,7 +374,7 @@ h1 {
 .filterContainer {
   display: inline-block;
   position: fixed;
-  top: 250px;
+  bottom: 10vh;
   text-align: center;
   margin: 20px;
   border: 1px solid #4fb3bf;
@@ -440,7 +449,7 @@ h1 {
   margin: 50px auto;
 }
 
-@media only screen and (max-width: 1050px) {
+@media screen and (max-width: 1050px), screen and (max-height: 700px) {
   .filterContainer {
     display: flex;
     justify-content: center;

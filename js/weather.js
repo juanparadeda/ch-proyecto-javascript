@@ -71,7 +71,7 @@ const generateWeatherCards = (weatherMapAPIArray) => {
         const sunsetTime = parsedSunset.toLocaleString(luxon.DateTime.TIME_24_SIMPLE);
         const probRain = Math.round(day.pop * 100);
         const icon = day.weather[0].icon;
-        HTML += `<div class="weatherCard" onclick="generateWeatherTips(weatherArray[${i}])">
+        HTML += `<a href="#tipsAnchor"><div class="weatherCard" onclick="generateWeatherTips(weatherArray[${i}])">
          <h5>${weekDay}</h5>
          <h5>${dayNumber}</h5>
          <img src='http://openweathermap.org/img/wn/${icon}@2x.png'>
@@ -79,7 +79,7 @@ const generateWeatherCards = (weatherMapAPIArray) => {
          <h6>Prob. lluvias: ${probRain}%</h6>
          <h6>Amanecer: ${sunriseTime}</h6>
          <h6>Atardecer: ${sunsetTime}</h6>
-     </div>`;
+     </div><a>`;
         document.getElementById('weatherCardsContainer').innerHTML = HTML;
     })
 }
