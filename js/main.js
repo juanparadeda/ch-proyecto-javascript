@@ -83,7 +83,7 @@ function filterCategoryCheckboxes(products) {
 
 // Esta función captura los checkboxes y dispara los filtros por tipo de lente (zoom, fijo). Además, deshabilita filtros excluyentes (si se selecciona una categoría, se deshabilitan el resto)
 function filterLensTypeCheckboxes(products) {
-    let {zoom, prime} = filterCheckboxes;
+    const {zoom, prime} = filterCheckboxes;
     if (zoom.checked ^ prime.checked){
         if (zoom.checked) {
             prime.disabled = true;
