@@ -77,6 +77,39 @@
     <div id="weatherTips" class="weatherTips">
 
     </div>
+        <!-- Bootstrap toast -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                    <strong class="me-auto">¡Felicitaciones!</strong>
+                    <small id="time"></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div id="toast-body" class="toast-body">
+                    <!-- Texto custom de la toast -->
+                   
+                </div>
+                
+            </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="noStockToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="noStock toast-header">
+                    <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                    <strong class="me-auto">¡Que pena!</strong>
+                    <small id="noStockTime"></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div id="noStock-toast-body" class="toast-body">
+                    <!-- Texto custom de la toast -->
+                   
+                </div>
+                
+            </div>
+        </div>
+    
+        <!-- Fin Bootstap toast-->
     <footer>
         <ul class="leftUl">
             <li>Sheipeg | Tu Tienda de Fotografía</li>
@@ -97,6 +130,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <script src="js/catalog.js"></script>
     <script src="js/cardsController.js"></script>
+    <script src="js/cartController.js"></script>
     <script src="js/getCart.js"></script>
     <script src="js/weatherTips.js"></script>
     <script src="js/weather.js"></script>
