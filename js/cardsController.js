@@ -25,13 +25,6 @@ function cardHTMLGenerator(products) {
     document.getElementById("cardContainer").innerHTML = cardsHTML;
 }
 
-function filterCategory(products, categoryToFilter) {
-    let filteredProducts = [];
-    products.forEach( product => {
-        product.category.indexOf(categoryToFilter) != -1 ? filteredProducts.push(product) : false;
-    })
-    return filteredProducts;
-}
 const goToProductPage = (e) => {
     e.preventDefault();
     const product = catalog.find(productInCatalog => productInCatalog.id == e.target.parentNode.parentNode.dataset.productid.toString());
@@ -44,4 +37,12 @@ const addProductPagesLinks = () => {
     for (let i = 0; i < links.length; i++) {
         links[i].onclick = goToProductPage;
     }
+}
+
+function filterCategory(products, categoryToFilter) {
+    let filteredProducts = [];
+    products.forEach( product => {
+        product.category.indexOf(categoryToFilter) != -1 && filteredProducts.push(product);
+    })
+    return filteredProducts;
 }

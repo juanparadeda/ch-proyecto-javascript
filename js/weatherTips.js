@@ -83,11 +83,11 @@ const publishRain = () => {
 
 const generateWeatherTips = (weatherDay) => {
     let HTML = '';
-    weatherDay.pop >= 0.1 ? HTML += publishRain(): false;
-    weatherDay.clouds < 11 ? HTML += publishSunnyTip() : false ;
-    weatherDay.clouds >= 11 && weatherDay.clouds < 25 ? HTML += publishFewClouds() : false;
-    weatherDay.clouds >= 25 && weatherDay.clouds < 50 ? HTML += publishSomeClouds() : false;
-    weatherDay.clouds >= 50 ? HTML += publishClouds() : false;
+    weatherDay.pop >= 0.1 && (HTML += publishRain());
+    weatherDay.clouds < 11 && (HTML += publishSunnyTip());
+    weatherDay.clouds >= 11 && weatherDay.clouds < 25 && (HTML += publishFewClouds());
+    weatherDay.clouds >= 25 && weatherDay.clouds < 50 && (HTML += publishSomeClouds());
+    weatherDay.clouds >= 50 && (HTML += publishClouds());
     document.getElementById('weatherTips').innerHTML = HTML;
     addProductPagesLinks();
 }

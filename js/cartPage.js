@@ -88,16 +88,20 @@ function updateQtyProductPrice(e) {
 // Función que verifica el código de descuento
 function verifyCode() {
     let discountCode = document.getElementById('discountCode').value;
+    discountCode.trim().toUpperCase() == 'ELFORTINDELINIERS' ? document.getElementById('discountApplied').innerHTML = `Precio Final por ser hincha de Vélez (-30%): $ ${Math.round((getCartPrice() *1.21 * 0.7))}` : document.getElementById('discountApplied').innerHTML = `Si no sos hincha del Fortín de Liniers, campeón del mundo en 1994, no tenés descuento`
+    return false;
+}
+
+
+/*function verifyCode() {
+    let discountCode = document.getElementById('discountCode').value;
     if (discountCode.trim().toUpperCase() == 'ELFORTINDELINIERS') {
         document.getElementById('discountApplied').innerHTML = `Precio Final por ser hincha de Vélez (-30%): $ ${Math.round((getCartPrice() *1.21 * 0.7))}`
     } else {
         document.getElementById('discountApplied').innerHTML = `Si no sos hincha del Fortín de Liniers, campeón del mundo en 1994, no tenés descuento`
     }
     return false;
-}
-
-
-
+}*/
 
 
 

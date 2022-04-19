@@ -8,19 +8,3 @@ const searchProductsTrigger = () => searchProducts(accesoriesCatalog)
 
 let triggerSearch = document.getElementById('searchString');
 triggerSearch.addEventListener('input', searchProductsTrigger);
-
-
-
-/*function searchProducts() {
-    let searchString = document.getElementById('searchString').value;
-    searchResults = [];
-    for (let i = 0; i < accesoriesCatalog.length; i++) {
-        if (accesoriesCatalog[i].name.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(accesoriesCatalog[i]);
-        } else if (accesoriesCatalog[i].description.toLowerCase().match(searchString.trim().toLowerCase())) {
-            searchResults.push(accesoriesCatalog[i]);
-        }
-    }
-    cardHTMLGenerator(searchResults);
-    addProductPagesLinks();
-}*/

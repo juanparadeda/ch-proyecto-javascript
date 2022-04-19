@@ -55,7 +55,7 @@ function filterProductCheckboxes(products) {
     }
 }
 
-// Esta función captura los checkboxes y dispara los filtros por categoría. Además, deshabilita filtros excluyentes (si se selecciona una categoría, se deshabilitan el resto)
+// Esta función captura los checkboxes y dispara los filtros por categoría. Además, deshabilita filtros excluyentes (si se selecciona una categoría, se deshabilitan el resto). Estas categorías aplican tanto a lentes como a cámaras. Por eso chequear mirrorless no deshabilita los tipos de lentes.
 function filterCategoryCheckboxes(products) {
     if (filterCheckboxes.reflex.checked ^ filterCheckboxes.mirrorless.checked === true) {
         if (filterCheckboxes.reflex.checked === true) {
@@ -72,6 +72,7 @@ function filterCategoryCheckboxes(products) {
     }
 }
 
+// Esta función captura los checkboxes y dispara los filtros por tipo de lente (zoom, fijo). Además, deshabilita filtros excluyentes (si se selecciona una categoría, se deshabilitan el resto)
 function filterLensTypeCheckboxes(products) {
     if (filterCheckboxes.zoom.checked ^ filterCheckboxes.prime.checked === true){
         if (filterCheckboxes.zoom.checked === true) {
@@ -117,11 +118,10 @@ function filterBrandCheckboxes(products) {
 // Función que ejecuta el filtro por marca, luego de haber capturado arriba los estados de los checkbox
 function filterBrand(products, brand) {
     let filteredProducts = [];
-    for (let i = 0; i < products.length; i++) {
-        
-        if (products[i].brand == brand) {
-            filteredProducts.push(products[i]);
-        }
-    }
+    products.forEach(product => {
+        product.brand == brand && filteredProducts.push(product);
+    })      
     return (filteredProducts);
 }
+
+// La función que ejecuta el filtro por categoría, está en cardsController.js pues se utiliza en varias páginas.
